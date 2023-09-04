@@ -48,11 +48,11 @@ function musicsite(site, theme) {
   playlist_number[13] = [30,44,77,17,73,14,24,5,67,2,31,32,84,26,65,72,47,48];
   playlist_number[14] = [13,73,70,14,47,37,59,36,49,23,21,54,58,8,84,86,82,53,38];
   playlist_number[15] = [95,82,80,86,87,97,100,3,55,71,98,44,14,69,96,99,84,45,15,49,101,9];
-  playlist_number[51] = [121,120,122,123,124,121,122,125,126,127,121,14,128,129,121,130,55,119]; // support 
+  playlist_number[51] = [121,120,122,123,124,121,122,125,126,127,121,128,129,130,121,14,55,119]; // support 
   playlist_number[53] = [121,120,122,123,124]; // support vibe 1
   playlist_number[54] = [121,122,125,126,127]; // support vibe 2
-  playlist_number[55] = [121,14,128,129]; // support vibe 3
-  playlist_number[56] = [121,130,55,119]; // support vibe 4
+  playlist_number[55] = [121,128,129,130]; // support vibe 3
+  playlist_number[56] = [121,14,55,119]; // support vibe 4
   
 
   // melon : 1 // genie : 2 // bugs : 3 // vibe : 4 // flo : 5
