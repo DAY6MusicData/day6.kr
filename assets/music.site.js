@@ -99,7 +99,7 @@ function musicsite(site, theme) {
       for(i=0;i<playlist_number[theme].length-1;i++) songid_dump = songid_dump + melon_songid[playlist_number[theme][i]] + ',';
       songid_dump = songid_dump + melon_songid[playlist_number[theme][playlist_number[theme].length-1]];
       if (userAgent.search("ipad") > -1 || navigator.platform === 'MacIntel') music_site_url = melon_ipad + songid_dump;
-      else if(theme == 51 && userAgent.search("android") > -1 ) music_site_url = "/support_melon_android";
+      else if(theme == 51 && mobileType.indexOf('android') > -1 ) music_site_url = "/support_melon_android";
       else music_site_url = melon + songid_dump;
     }
     else if(site == 2 || site == 7){
