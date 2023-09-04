@@ -5,7 +5,7 @@ function musicsite(site, theme) {
   var userAgent = navigator.userAgent.toLowerCase();
 
   // one-click link
-  var melon = "melonapp://play/?ctype=1&menuid=0&cid=";
+  var melon = "melonapp://play?ctype=1&menuid=0&cid=";
   var melon_ipad = "melonipad://play/?ctype=1&menuid=0&cid=";
   var melon_win = "melonapp://play?cType=1&cList=";
   var melon_mac_1 = "melonplayer://play?ref=&cid=";
