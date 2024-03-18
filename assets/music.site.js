@@ -50,11 +50,11 @@ function musicsite(site, theme) {
   playlist_number[15] = [95,82,80,86,87,97,100,3,55,71,98,44,14,69,96,99,84,45,15,49,101,9]; // right through me concert
   playlist_number[16] = [23,89,93,72,18,71,90,49,91,21,15,14,2,37,74,12,61,40,59,55,20,9,0]; // present 2023
     
-    playlist_number[51] = [14,55,49,74,14,55,72,119,14,55,37,2,14,55,96]; // support
-  playlist_number[53] = [14,55,49,74]; // support 1
-  playlist_number[54] = [14,55,72,119]; // support 2
-  playlist_number[55] = [14,55,37,2]; // support 3
-  playlist_number[56] = [14,55,96]; // support 4
+  playlist_number[51] = [131,132,133,134,14,131,135,136,137,55,131,132,133,134,131,14,55]; // support
+  playlist_number[53] = [131,132,133,134,14]; // support 1
+  playlist_number[54] = [131,135,136,137,55]; // support 2
+  playlist_number[55] = [131,132,133,134]; // support 3
+  playlist_number[56] = [131,14,55]; // support 4
   
 
   // melon : 1 // genie : 2 // bugs : 3 // vibe : 4 // flo : 5
