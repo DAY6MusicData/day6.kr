@@ -103,9 +103,7 @@ function musicsite(site, theme) {
       if(userAgent.includes("ipad") || userAgent.includes("macintosh")) music_site_url = melon_ipad + songid_dump;
       else music_site_url = melon + songid_dump;
       
-      if (theme == 51 && (userAgent.includes("android") || userAgent.includes("windows nt"))) {
-        music_site_url = "/support_melon_android";
-      }
+      if (theme == 51 && userAgent.includes("android")) music_site_url = "/support_melon_android";
     }
     else if(site == 2 || site == 7){
       for(i=0;i<playlist_number[theme].length-1;i++) songid_dump = songid_dump + genie_songid[playlist_number[theme][i]] + ';';
@@ -253,6 +251,7 @@ function musicsite(site, theme) {
       for(i=0;i<playlist_number[theme].length-1;i++) songid_dump = songid_dump + melon_songid[playlist_number[theme][i]] + ',';
       songid_dump = songid_dump + melon_songid[playlist_number[theme][playlist_number[theme].length-1]];
       if (userAgent.includes("macintosh")) music_site_url = melon_mac_1 + songid_dump + melon_mac_2;
+      else if (theme == 51 && userAgent.includes("windows nt")) music_site_url = "/support_melon_android";
       else music_site_url = melon_win + songid_dump;
     }
     else if(site == 2 || site == 7){
