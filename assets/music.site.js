@@ -1,8 +1,8 @@
 function musicsite(site, theme) {
 
   // device test
-  var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
   var userAgent = navigator.userAgent.toLowerCase();
+  var mobile = (/iphone|ipad|ipod|android/i.test(userAgent) || (userAgent.includes('macintosh') && navigator.maxTouchPoints > 1));
 
   // one-click link
   var melon = "melonapp://play?ctype=1&menuid=0&cid=";
@@ -66,7 +66,7 @@ function musicsite(site, theme) {
 
   var guide_link = ["", "/guide#멜론-스트리밍-가이드", "/guide#지니-스트리밍-가이드", "/guide#벅스-스트리밍-가이드", "/guide#바이브-스트리밍-가이드", "/guide#플로-스트리밍-가이드"];
 
-  if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) || site < 4 ) ok = 1; // site test
+  if ( mobile || site < 4 ) ok = 1; // site test
   else ok = 0;
 
   if ( (site==5||site==10) && mobile ){
@@ -95,20 +95,22 @@ function musicsite(site, theme) {
     title: title[ok]
   })
 
-  if ( mobile || ( navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1 ) ){
+  if ( mobile ){
     // site 1 - 4 case
     if(site == 1 || site == 6){
       for(i=0;i<playlist_number[theme].length-1;i++) songid_dump = songid_dump + melon_songid[playlist_number[theme][i]] + ',';
       songid_dump = songid_dump + melon_songid[playlist_number[theme][playlist_number[theme].length-1]];
-      if(userAgent.search("ipad") > -1 || navigator.platform === 'MacIntel') music_site_url = melon_ipad + songid_dump;
+      if(userAgent.includes("ipad") || userAgent.includes('macintosh')) music_site_url = melon_ipad + songid_dump;
       else music_site_url = melon + songid_dump;
       
-      if(theme == 51 && userAgent.search("android") > -1) music_site_url = "/support_melon_android";
+      if (theme == 51 && (userAgent.includes("android") || userAgent.includes("windows nt")) {
+        music_site_url = "/support_melon_android";
+      }
     }
     else if(site == 2 || site == 7){
       for(i=0;i<playlist_number[theme].length-1;i++) songid_dump = songid_dump + genie_songid[playlist_number[theme][i]] + ';';
       songid_dump = songid_dump + genie_songid[playlist_number[theme][playlist_number[theme].length-1]];
-      if(userAgent.search("android") > -1) music_site_url = genie_android + songid_dump;
+      if(userAgent.includes("android")) music_site_url = genie_android + songid_dump;
       else music_site_url = genie_iphone + songid_dump;
     }
     else if(site == 3 || site == 8){
@@ -250,7 +252,7 @@ function musicsite(site, theme) {
     if(site == 1 || site == 6){
       for(i=0;i<playlist_number[theme].length-1;i++) songid_dump = songid_dump + melon_songid[playlist_number[theme][i]] + ',';
       songid_dump = songid_dump + melon_songid[playlist_number[theme][playlist_number[theme].length-1]];
-      if (userAgent.search("macintosh") > -1) music_site_url = melon_mac_1 + songid_dump + melon_mac_2;
+      if (userAgent.includes("macintosh")) music_site_url = melon_mac_1 + songid_dump + melon_mac_2;
       else music_site_url = melon_win + songid_dump;
     }
     else if(site == 2 || site == 7){
@@ -265,7 +267,7 @@ function musicsite(site, theme) {
       music_site_url = bugs_pc + songid_dump;
       if (site == 3) window.open( music_site_url, '', 'scrollbars=no, width=350, height=800');
     }
-    if(site == 1 && userAgent.search("macintosh") > -1){
+    if(site == 1 && userAgent.includes("macintosh")){
       Swal.fire({
         icon: 'success',
         title: '멜론 플레이리스트 생성 완료🎉',
@@ -297,7 +299,7 @@ function musicsite(site, theme) {
           location.href = music_site_url;
         }
       })
-    } else if(site == 6 && userAgent.search("macintosh") > -1){
+    } else if(site == 6 && userAgent.includes("macintosh")){
       Swal.fire({
         icon: 'success',
         title: '멜론 플레이리스트 생성 완료🎉',
